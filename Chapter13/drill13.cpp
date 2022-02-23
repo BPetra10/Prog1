@@ -13,6 +13,7 @@ int main()
 
     Simple_window win {Point{100,100},xmax,ymax,"My window"};
 
+    //grid size
 	int x_size = 800;
 	int y_size = 800;
 	int x_grid = 100;
@@ -20,14 +21,15 @@ int main()
 	
 	Lines grid;
 	for (int x=x_grid; x<x_size; x+=x_grid)
-	grid.add(Point{x,0},Point{x,y_size});
+	grid.add(Point{x,0},Point{x,y_size});//vertical
 	for (int y = y_grid; y<y_size; y+=y_grid)
-	grid.add(Point{0,y},Point{x_size,y});
+	grid.add(Point{0,y},Point{x_size,y});//horizontal
 	win.attach(grid);
 
 	int eltol_X=0;
 	int eltol_Y=0;
 
+	//diagonal squares
 	Vector_ref<Rectangle> rect;
 	for(int i=0; i<8; ++i)
 	{
