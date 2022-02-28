@@ -33,14 +33,14 @@ bool line_segment_intersect(Point p1, Point p2, Point p3, Point p4, Point& inter
    return true;
 } 
 
-void Shape::draw_lines() const
+void Shape::draw_lines() const //pontról-pontra haladva vonalhúzás
 {
-	if (color().visibility() && 1<points.size())
+	if (color().visibility() && 1<points.size())//1-nél több pont, és látható
 		for(int i = 1; i < points.size(); ++i)
 			fl_line(points[i-1].x, points[i-1].y, points[i].x, points[i].y);
 }
 
-void Shape::move(int dx, int dy)
+void Shape::move(int dx, int dy)//mennyivel mozgatunk el
 {
 	for(int i = 0; i < points.size(); ++i){
 		points[i].x += dx;
@@ -48,7 +48,7 @@ void Shape::move(int dx, int dy)
 	}
 }
 
-void Shape::draw() const
+void Shape::draw() const //alapszín eltárolás, színmanipulálás
 {
 	Fl_Color oldc = fl_color();
 	fl_color(lcolor.as_int());

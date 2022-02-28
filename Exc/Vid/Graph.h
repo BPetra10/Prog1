@@ -110,6 +110,7 @@ public:
 
 	virtual void move(int dx, int dy);
 
+	//vonal színét állítjuk, majd elkérjük:
 	void set_color(Color col) { lcolor = col; }
 	Color color() const { return lcolor; }
 
@@ -119,12 +120,14 @@ public:
 	void set_fill_color(Color col) { fcolor = col; }
 	Color fill_color() const { return fcolor; }
 
+	//i-edik pont visszaadása
 	Point point(int i) const { return points[i]; }
 	int number_of_points() const { return int(points.size()); }
 
+	//másolás letiltása, másolás konstruktora
 	Shape(const Shape&) = delete;
 	Shape& operator=(const Shape&) = delete;
-
+	//destruktor:
 	virtual ~Shape() { }
 
 protected:
@@ -224,11 +227,11 @@ private:
 
 struct Text : Shape {
 private:
-	string lab;
-	Font fnt { fl_font() };
-	int fnt_sz { 14<fl_size() ? fl_size() : 14 };
+	string lab; //mit írunk ki
+	Font fnt { fl_font() }; //betűtípus
+	int fnt_sz { 14<fl_size() ? fl_size() : 14 };//betűméret
 public:
-	Text(Point x, const string& s): lab {s} { add(x); }
+	Text(Point x, const string& s): lab {s} { add(x); }//ahonnan kiakrunk írni szöveget
 
 	void draw_lines() const;
 
@@ -248,7 +251,7 @@ private:
 	int r;
 public:
 	Circle(Point p, int rr): r{rr} {
-		add(Point{ p.x-r, p.y-r });
+		add(Point{ p.x-r, p.y-r }); //A kört befoglaló négyzet sarkát adja meg, nem középpont
 	}
 
 	void draw_lines() const;
