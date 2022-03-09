@@ -1,0 +1,6 @@
+Szükséges fájlok tételhúzáskor:
+drill16.cpp
+Lines_window.h
+Lines_window.cpp
+
+
