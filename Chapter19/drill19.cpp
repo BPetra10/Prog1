@@ -76,7 +76,7 @@ template<typename T> ostream& operator<<(ostream& os, const vector<T>& v)
     return os;
 }
 
-template<typename T> istream& operator>>(std::istream& is, vector<T>& v)
+template<typename T> istream& operator>>(istream& is, vector<T>& v)
 {
     char ch = 0;
     is >> ch;
