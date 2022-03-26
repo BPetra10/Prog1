@@ -13,10 +13,11 @@
 using namespace std; 
 
 //template for printing:
-template<typename T> void write(const T& t, string s)
+//C meaning = Container 
+template<typename C> void write(const C& c, string s)
 {
   cout<< s <<" ";
-  for(auto& x : t)
+  for(auto& x : c)
     cout<< x <<" ";
   cout<<"\n";
 }
