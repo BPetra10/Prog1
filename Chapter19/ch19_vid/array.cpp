@@ -15,17 +15,22 @@ void printout(const C& c)
 template <typename T, int N>
 struct my_array 
 {
-  //using value_type = T;
-  //using iterator = T*;
-  //using const_iterator = const T*;
-  //using size_type = unsigned int;
+  //szinonimák/alias bevezetése. pl.: value_type alatt értjük a T típust
+  using value_type = T;
+  using iterator = T*; //pointer
+  using const_iterator = const T*;
+  using size_type = unsigned int; //unsigned int = előjel nélküli int.
+
   T elems[N]; // T típusú array N db elemnek
   //fordítási idejű polimorfizmus lesz a fentbbi N elem db-nek megadása
-  //iterator begin() { return elems; }
-  //const_iterator begin() const { return elems; }
-  //iterator end() { return elems+N; }
-  //const_iterator end() const { return elems+N; }
-  //size_type size() const;
+
+  //Iterátor függvények:
+  //első elem:
+  iterator begin() { return elems; }
+  const_iterator begin() const { return elems; }
+  //utolsó (utáni) elem:
+  iterator end() { return elems+N; }
+  const_iterator end() const { return elems+N; }
   
   //subscript operátor: N-edik elemre hivatkozó T referencia
   T& operator[](int n) { return elems[n]; } 
@@ -33,11 +38,6 @@ struct my_array
 
   //méret kezelése:
   int size() const {return N;}
-
-  //const T& at(int n) const;
-  //T& at(int n);
-  //T * data() { return elems; }
-  //const T * data() const { return elems; }
 };
 
 int main()
@@ -57,7 +57,10 @@ int main()
 
   printout(int_array);
   printout(double_array);
-
   vector<int> iv = {10,20,30,40,50};
   printout(iv);
+
+  cout<<"Range for loop:"<<endl;
+  for(const auto& e : double_array)
+    cout<<e<<endl;
 }
