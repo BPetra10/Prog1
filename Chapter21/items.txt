@@ -1,4 +1,4 @@
-Jozsi 1 12.4
+Józsi 1 12.4
 Arnold 3 15.6
 András 2 11.2
 Lujza 5 12.8
