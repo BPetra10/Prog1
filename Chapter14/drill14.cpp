@@ -65,7 +65,7 @@ int main()
     B1::vf()
     B1::f()
     D1::vf()
-    B1::f()//Öröklés miatt B1::f()-et kapunk meg, mert nincs a D1-ben f()
+    B1::f()
     D1::vf()
     B1::f()
 
@@ -74,7 +74,7 @@ int main()
     B1::vf()
     B1::f()
     D1::vf()
-    D1::f() //Megírtuk az f()-et
+    D1::f() 
     D1::vf()
     D1::f()
     */
@@ -97,14 +97,13 @@ int main()
     */
     
     //5. pure virtual function
-    /*void pvf() = 0; 
-    B1, D1 = absztrakt => nem példányosítható. 
-    B1 absztrakt lesz a pvf miatt,
-    a D1 pedig nem írja felül (override) a B1 pvf-ét.
+    /*
+    B1, D1 = absztrakt
+    B1 absztrakt pvf(),
+    a D1 pedig nem írja felül a B1 pvf-ét.
     */
 
     //6.
-    //példányosítás
     D2 d2;
     d2.vf();
     d2.f();

@@ -35,7 +35,7 @@ struct Person
 
 /*Person::Person(string f, string l, int a):fname_var(f),lname_var(l),age_var(a)
     {
-        if (a<0 || a>=150) error("Age must be in range [0,150)");
+        if (a=<0 || a>150) error("Age must be in range [0,150)");
 
         string fullname=f+l;
         for (char c : fullname)
@@ -55,7 +55,7 @@ struct Person
 
 Person::Person(string f, string l, int a):fname_var(f),lname_var(l),age_var(a)
 {
-    if (a<0 || a>=150) error("Age must be in range [0,150).");
+    if (a=<0 || a>150) error("Age must be in range [0,150).");
 
     const string bad_chars=";:\"'[]*&^%$#@!";
 
